@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Tutor Pribadi Mahasiswa',
+      theme: ThemeData(
+        primaryColor: Colors.blue, // Warna utama
+        accentColor: Colors.blueAccent, // Warna aksen
+        fontFamily: 'Roboto', // Font utama
+        scaffoldBackgroundColor: Colors.white, // Warna latar belakang scaffold
+        appBarTheme: AppBarTheme(
+          color: Colors.blue, // Warna AppBar
+          elevation: 0, // Ketebalan bayangan AppBar
+          brightness: Brightness.dark, // Kecerahan AppBar
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              color: Colors.white, // Warna teks judul AppBar
+              fontSize: 20.0, // Ukuran teks judul AppBar
+              fontWeight: FontWeight.bold, // Ketebalan teks judul AppBar
+            ),
+          ),
+        ),
+        textTheme: TextTheme(
+          // Gaya teks umum
+          bodyText1: TextStyle(
+            fontSize: 16.0,
+            color: Colors.black87,
+          ),
+          bodyText2: TextStyle(
+            fontSize: 14.0,
+            color: Colors.black54,
+          ),
+          headline1: TextStyle(
+            fontSize: 24.0,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+          headline2: TextStyle(
+            fontSize: 20.0,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+          // dan seterusnya...
+        ),
+        buttonTheme: ButtonThemeData(
+          // Gaya tombol umum
+          buttonColor: Colors.blue, // Warna tombol
+          textTheme: ButtonTextTheme.primary, // Gaya teks tombol
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0), // Bentuk tombol
+          ),
+        ),
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tutor Pribadi Mahasiswa'),
+      ),
+      body: Center(
+        child: Text(
+          'Selamat datang di aplikasi tutor pribadi mahasiswa!',
+          style: Theme.of(context).textTheme.headline1,
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}
